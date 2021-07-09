@@ -38,7 +38,7 @@ for i = 1:length(urls)
             continue;
         end
     end
-    % Inspect webpage code for mentions of 'author'
+    % Inspect webpage for mentions of 'author'
     try
         x = webread(urls(i));
         nameMatches = [strfind(x, 'author') strfind(x, 'article_author')...
