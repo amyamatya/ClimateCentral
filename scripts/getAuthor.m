@@ -16,7 +16,7 @@ cd(fullfile(yourPath, 'scripts'));
 addpath /Users/aamatya/Documents/MATLAB/ST2021/functions
 addpath(fullfile(yourPath, 'data'));
 % Load list of possible first names
-namez = readtable('names.xlsx');
+namez = readtable(fullfile(yourPath, 'data','names.xlsx'));
 namez = table2cell(namez);
 namez = string(namez);
 % Load URLs
