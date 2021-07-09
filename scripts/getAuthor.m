@@ -9,7 +9,7 @@ function [finalName] = getAuthor(yourPath, queryExcel)
 %                     column 2: Headline
 %-------------Output----------------------------
 % finalName         - (optional) array of names
-% queryExcel        - colunn 3: author name
+% queryExcel        - column 3: author name
 %-----------------------------------------------
 % Go to directory
 cd(fullfile(yourPath, 'scripts'));
