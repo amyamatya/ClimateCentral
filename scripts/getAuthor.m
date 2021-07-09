@@ -1,8 +1,10 @@
-function [finalName] = getAuthor(queryExcel)
+function [finalName] = getAuthor(yourPath, queryExcel)
 % Get author names from online articles
 % Last modified 06/08/21 @aamatya
 %-------------Input-----------------------------
-% queryExcel        - excel filename
+% yourPath          - root location of files
+%                     ('/Users/aamatya/Documents/MATLAB/ClimateCentral')
+% queryExcel        - spreadsheet of articles
 %                     column 1: URL
 %                     column 2: Headline
 %-------------Output----------------------------
@@ -10,15 +12,15 @@ function [finalName] = getAuthor(queryExcel)
 % queryExcel        - colunn 3: author name
 %-----------------------------------------------
 % Go to directory
-cd /Users/aamatya/Documents/MATLAB/ClimateCentral/scripts
+cd(fullfile(yourPath, 'scripts'));
 addpath /Users/aamatya/Documents/MATLAB/ST2021/functions
-addpath /Users/aamatya/Documents/MATLAB/ClimateCentral/data
+addpath(fullfile(yourPath, 'data'));
 % Load list of possible first names
 namez = readtable('names.xlsx');
 namez = table2cell(namez);
 namez = string(namez);
 % Load URLs
-spreadSheet = readtable(queryExcel);
+spreadSheet = readtable(fullfile(yourPath, 'data', queryExcel));
 spreadSheet = table2cell(spreadSheet);
 spreadSheet = string(spreadSheet);
 urls = spreadSheet(:,1);
@@ -102,6 +104,6 @@ finalName(strcmp(finalName, 'Robert A')) = 'Robert Cronkleton';
 finalName(strcmp(finalName, 'Mark Pe')) = 'Mark Pena';
 finalName(strcmp(finalName, 'Ana Cristina')) = 'Ana Sanchez';
 % Save to file
-writetable(array2table(finalName),'/Users/aamatya/Documents/MATLAB/ClimateCentral/data/urls.xlsx', 'Range','C1');
+writetable(array2table(finalName),fullfile(yourPath, 'data', queryExcel), 'Range','C1');
 end
 
