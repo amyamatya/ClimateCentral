@@ -8,7 +8,6 @@ function [inNums] = findConsecutive(inNums)
 current = 1;
 badNum = [];
 while current < length(inNums)
-% if current character is not part of current word, end word
     if inNums(current+1) - inNums(current) == 1
         badNum = [badNum current+1];
         current = current+1;
