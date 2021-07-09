@@ -52,7 +52,7 @@ for i = 1:length(urls)
         finalName(i) = "";
         continue
     end
-    % Grab 50 characters after 'author', exclude weird symbols, parse into words
+    % Grab 150 characters after 'author', exclude weird symbols, parse into words
     for j = 1:length(nameMatches)
         match = x(nameMatches(j):nameMatches(j)+150);
         strMatch = string(match);
