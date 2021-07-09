@@ -1,10 +1,9 @@
 function [inNums] = findConsecutive(inNums)
-% Remove 2nd number if consecutive
+% Keep first of a series of consecutive numbers 
 % Last modified 06/08/21 @aamatya
-%-------------Input-----------------------------
-% inNums           - number array
-%-------------Output----------------------------
-% inNums          - number array with consecutive removed
+%-------------Variables-----------------------------
+% inNums           - index array, return original with 
+%                    consecutive numbers removed
 %-----------------------------------------------
 current = 1;
 badNum = [];

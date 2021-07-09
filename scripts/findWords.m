@@ -16,7 +16,6 @@ for i = 1:length(inArray)-1
         current = i+1;
         count = count+1;
     end
-    
 end
 end
 
