@@ -64,7 +64,7 @@ for i = 1:length(urls)
             finalName(i) = "";
             continue
         end
-        % Find words that resemble common first names
+        % Find words that resemble common first names, then grab last name
         [~, found,~] = intersect(wordz, namez);
         [~, uniqueFinds, ~] = unique(wordz(found));
         found = sort(found(uniqueFinds));
